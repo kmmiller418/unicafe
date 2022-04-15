@@ -38,6 +38,10 @@ const Statistics = (props) => {
           <td>{bad}</td>
         </tr>
         <tr>
+          <th>all</th>
+          <td>{getTotal()}</td>
+        </tr>
+        <tr>
           <th>average</th>
           <td>{getAverage()}</td>
         </tr>
