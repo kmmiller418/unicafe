@@ -13,6 +13,14 @@ const Statistics = (props) => {
     return (good / getTotal()) * 100;
   };
 
+  if (good === 0 && bad === 0 && neutral === 0) {
+    return (
+      <div>
+        <h1>statistics</h1>
+        <p>No feedback given</p>
+      </div>
+    )
+  }
   return (
     <div>
       <h1>statistics</h1>
