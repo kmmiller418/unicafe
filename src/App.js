@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 
+const Button = (props) => {
+  const { onClick, text } = props;
+  return <button onClick={onClick}>{text}</button>;
+};
+
 const Statistics = (props) => {
   const { good, bad, neutral } = props;
 
@@ -25,30 +30,32 @@ const Statistics = (props) => {
     <div>
       <h1>statistics</h1>
       <table>
-        <tr>
-          <th>good</th>
-          <td>{good}</td>
-        </tr>
-        <tr>
-          <th>neutral</th>
-          <td>{neutral}</td>
-        </tr>
-        <tr>
-          <th>bad</th>
-          <td>{bad}</td>
-        </tr>
-        <tr>
-          <th>all</th>
-          <td>{getTotal()}</td>
-        </tr>
-        <tr>
-          <th>average</th>
-          <td>{getAverage()}</td>
-        </tr>
-        <tr>
-          <th>positive</th>
-          <td>{getPositive()}%</td>
-        </tr>
+        <tbody>
+          <tr>
+            <th>good</th>
+            <td>{good}</td>
+          </tr>
+          <tr>
+            <th>neutral</th>
+            <td>{neutral}</td>
+          </tr>
+          <tr>
+            <th>bad</th>
+            <td>{bad}</td>
+          </tr>
+          <tr>
+            <th>all</th>
+            <td>{getTotal()}</td>
+          </tr>
+          <tr>
+            <th>average</th>
+            <td>{getAverage()}</td>
+          </tr>
+          <tr>
+            <th>positive</th>
+            <td>{getPositive()}%</td>
+          </tr>
+        </tbody>
       </table>
     </div>
   );
@@ -74,9 +81,9 @@ const App = () => {
   return (
     <div>
       <h1>give feedback</h1>
-      <button onClick={handleGoodClick}>good</button>
-      <button onClick={handleNeutralClick}>neutral</button>
-      <button onClick={handleBadClick}>bad</button>
+      <Button onClick={handleGoodClick} text="good" />
+      <Button onClick={handleNeutralClick} text="neutral" />
+      <Button onClick={handleBadClick} text="bad" />
 
       <Statistics good={good} bad={bad} neutral={neutral} />
     </div>
